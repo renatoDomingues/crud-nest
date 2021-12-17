@@ -1,6 +1,7 @@
 
 //Import
 import { ProductService } from "./product.service";
+import { Product } from "../product.entity";
 
 //Importar que dá suporte a base do decolator controller e o Get abaixo
 import { Controller, Get } from "@nestjs/common";
@@ -15,7 +16,7 @@ export class ProductController{
 
     @Get() //Para chamar o findAll()
     //Um metodo com função
-    async findAll(): Promise<any> {
+    async findAll(): Promise<Product[]> {
         //return [{ id: 1 }]
         return this.productService.findAll()
     }
